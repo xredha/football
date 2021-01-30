@@ -1,11 +1,10 @@
-/* eslint-disable no-undef */
 document.addEventListener("DOMContentLoaded", function() {
   let page = window.location.hash.substr(1);
   if (page == "") page = "home";
   loadPage(page);
   
   function loadPage(page) {
-    fetch(`/dist/views/${page}.html`)
+    fetch(`views/${page}.html`)
       .then(response => {
         if (response.status === 200) {
           return;

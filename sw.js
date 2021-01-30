@@ -1,28 +1,36 @@
 const CACHE_NAME = "mancity-v1";
 let urlsToCache = [
-  "/dist",
-  "/dist/index.html",
-  "/dist/views/home.html",
-  "/dist/views/member.html",
-  "/dist/views/nav.html",
-  "/dist/views/saved.html",
-  "/dist/img/gallery/1.webp",
-  "/dist/img/gallery/2.webp",
-  "/dist/img/gallery/3.webp",
-  "/dist/img/gallery/4.webp",
-  "/dist/img/gallery/5.webp",
-  "/dist/img/gallery/6.webp",
-  "/dist/img/icon/icon-72x72.png",
-  "/dist/img/icon/icon-128x128.png",
-  "/dist/img/icon/icon-144x144.png",
-  "/dist/img/icon/icon-192x192.png",
-  "/dist/img/icon/icon-256x256.png",
-  "/dist/img/icon/icon-512x512.png",
-  "/dist/bundle.js",
+  "/",
+  "/index.html",
+  "/views/home.html",
+  "/views/member.html",
+  "/views/nav.html",
+  "/views/saved.html",
+  "/css/materialize.min.css",
+  "/css/style.css",
+  "/img/gallery/1.webp",
+  "/img/gallery/2.webp",
+  "/img/gallery/3.webp",
+  "/img/gallery/4.webp",
+  "/img/gallery/5.webp",
+  "/img/gallery/6.webp",
+  "/img/icon/icon-72x72.png",
+  "/img/icon/icon-128x128.png",
+  "/img/icon/icon-144x144.png",
+  "/img/icon/icon-192x192.png",
+  "/img/icon/icon-256x256.png",
+  "/img/icon/icon-512x512.png",
+  "/js/components/footer.js",
+  "/js/components/navbar.js",
+  "/js/app.js",
+  "/js/functions.js",
+  "/js/main.js",
+  "/js/materialize.min.js",
+  "/js/nav.js",
   "https://fonts.gstatic.com/s/robotoslab/v12/BngbUXZYTXPIvIBgJJSb6s3BzlRRfKOFbvjojISmb2Rj.woff2",
   "https://fonts.googleapis.com/css2?family=Merriweather&family=Roboto+Slab&display=swap",
   "https://fonts.googleapis.com/icon?family=Material+Icons"
-];
+]
 
 self.addEventListener('install', function(event) {
   // console.log("ServiceWorker: Menginstall...");
@@ -32,7 +40,7 @@ self.addEventListener('install', function(event) {
       // console.log("ServiceWorker: Membuka cache...");
       return cache.addAll(urlsToCache);
     })
-  );
+  )
 });
 
 self.addEventListener('activate', function(event) {
@@ -76,10 +84,10 @@ self.addEventListener("fetch", function(event) {
             caches.open(CACHE_NAME)
             .then(function(cache) {
               cache.put(event.request, responseToCache);
-            });
+            })
 
             return response;
-          });
+          })
       })
   );
 });

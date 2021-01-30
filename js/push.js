@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 let webPush = require('web-push');
 
 const vapidKeys = {
@@ -10,15 +9,15 @@ webPush.setVapidDetails(
   'mailto:galihredha100@gmail.com',
   vapidKeys.publicKey,
   vapidKeys.privateKey
-);
+)
 
 let pushSubscription = {
-  "endpoint" : "https://fcm.googleapis.com/fcm/send/c_vxN5Pz96g:APA91bGip0cPg2RKSlhpWxyPl1LKENeSzCpNEfVPog-F0Oh7bMNbs6Sp1zwjFn0eLCfnFkpDas60zA8OgxtZUf4zIZjWXBvCcUDa1RAMV6Az_BNSG6U9GqsV1uDyxTAsD2dBAdUt2RS9",
+  "endpoint" : "https://fcm.googleapis.com/fcm/send/eG4J5zTBaEE:APA91bEtajC7yYfc2LocyZY34aNeO7sKg6a20TosIbgVWH9gZXhI_OS_VACVdK15SQrWXzi3HFXqZ6m6N0xZiLFvVvy9PeiLgao_tFjGhABMS8rtD9HWCnlC_6CFKnC133rBpRWhl8sP",
   "keys": {
-    "p256dh": "BOy9AZp9S3MmSFCQSMI/0xoUUAHntnKQfpQVzumOK4DVxFKRxxI3bufP+zbkphw6NTwWA838jRhbLFJ6X/LwrnE=",
-    "auth": "B/2O8YwDcMaEE6P/sJjMVg=="
+    "p256dh": "BG6jItr2LGjZaegx2kIO8hh79+6PsJTOd/qpbkzrysyetTsvcG034Nb82iWn0Xe1rLPJqZFiSZTR9smYDeZ/KQw=",
+    "auth": "8/ER4hGuxFB+KobI8wewYQ=="
   }
-};
+}
 
 let payload = 'Selamat! Aplikasi Anda sudah dapat menerima push notifikasi!';
 

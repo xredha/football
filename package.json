@@ -2,28 +2,18 @@
   "name": "submission-2",
   "version": "1.0.0",
   "description": "Submission 2 Dicoding PWA",
-  "main": "app.js",
+  "main": "js/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config webpack.config.js",
-    "start": "webpack-dev-server --config webpack.dev.js --open",
-    "push": "node src/js/push.js"
+    "server": "http-server --port 8082",
+    "push": "node js/push.js"
   },
   "author": "Galih Redha Saputra",
   "license": "ISC",
   "devDependencies": {
-    "copy-webpack-plugin": "^6.2.0",
-    "css-loader": "^4.3.0",
     "eslint": "^7.8.1",
-    "html-loader": "^1.3.1",
-    "html-webpack-plugin": "^4.5.0",
-    "jshint": "^2.12.0",
-    "style-loader": "^1.3.0",
-    "web-push": "^3.4.4",
-    "webpack": "^4.44.2",
-    "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0",
-    "webpack-merge": "^5.1.4"
+    "http-server": "^0.12.3",
+    "web-push": "^3.4.4"
   },
   "dependencies": {
     "idb": "^2.1.3",

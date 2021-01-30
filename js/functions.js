@@ -1,4 +1,4 @@
-import moment from 'moment';
+import moment from './../node_modules/moment/dist/moment.js';
 
 /* TEAM PAGE */
 
@@ -102,13 +102,13 @@ function getSquadMemberTeam() {
       if (response.status === 200) {
         return response.clone().json();
       } else if (response.status === 404) {
-        alert("Halaman tidak ditemukan : ", response.statusText);
+        alert("Halaman tidak ditemukan : ", response.statusText)
       } else {
         console.error("Error", response.statusText);
       }
     })
     .then(result => result.squad)
-    .catch(error => console.error("Error : ", error));
+    .catch(error => console.error("Error : ", error))
 }
 
 /* SAVE PAGE */
@@ -154,10 +154,10 @@ function addMember(db, id, name, position, shirt, nationality, country_birth) {
   tx.oncomplete = function() { 
     alert('Data saved');
     console.log('stored data : ' + name);
-  };
+  }
   tx.onerror = function(event) {
     alert('error storing data ' + event.target.errorCode);
-  };
+  }
 }
 
 function getAndDisplayMember(db) {
@@ -176,10 +176,10 @@ function getAndDisplayMember(db) {
     } else {
       displayMember(allData);
     }
-  };
+  }
   req.onerror = function(event) {
     alert('error getting indexedDB ' + event.target.errorCode);
-  };
+  }
 }
 
 function displayMember(resultDB) {
@@ -194,7 +194,7 @@ function displayMember(resultDB) {
     }
 
     resultAll += savedContent(elems);
-  });
+  })
   
   let data = `
     <div id="member-container">

@@ -2,7 +2,7 @@
   "name": "Dunia Bola - Galih RS",
   "short_name": "Dunia Bola",
   "description": "Galih Redha Saputra - Submission 2 Dicoding PWA",
-  "start_url": "/dist/index.html",
+  "start_url": "/index.html",
   "display": "standalone",
   "background_color": "#98c5e9",
   "theme_color": "#98c5e9",

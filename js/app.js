@@ -1,4 +1,4 @@
-import moment from 'moment';
+import moment from './../node_modules/moment/dist/moment.js';
 import * as func from './functions.js';
 
 const root = document.querySelector('#root');
@@ -17,16 +17,16 @@ document.addEventListener("DOMContentLoaded", function() {
     db = event.target.result;
 
     db.createObjectStore('member', {keyPath: "id"});
-  };
+  }
   dbReq.onsuccess = function(event) {
     db = event.target.result;
 
     console.log("IndexedDB success created");
-  };
+  }
   dbReq.onerror = function(event) {
     alert('error opening database ' + event.target.errorCode);
-  };
-});
+  }
+})
 
 window.addEventListener('click', function() {
   if (event.target.classList.contains("team")) {
@@ -47,7 +47,7 @@ window.addEventListener('click', function() {
           }
 
           resultAll += func.memberContent(elems);
-        });
+        })
 
         let data = `
           <div id="member-container">
@@ -61,7 +61,7 @@ window.addEventListener('click', function() {
         `;
         root.innerHTML = data;
       })
-      .catch(error => console.error("Error : ", error));
+      .catch(error => console.error("Error : ", error))
   }
 
   idMember.forEach(id => {
@@ -75,7 +75,7 @@ window.addEventListener('click', function() {
         if (response.status === 200) {
           return response.clone().json();
         } else if (response.status === 404) {
-          alert("Halaman tidak ditemukan : ", response.statusText);
+          alert("Halaman tidak ditemukan : ", response.statusText)
         } else {
           console.error("Error", response.statusText);
         }
@@ -97,19 +97,19 @@ window.addEventListener('click', function() {
           db = event.target.result;
 
           db.createObjectStore('member', {keyPath: "id"});
-        };
+        }
         dbReq.onsuccess = function(event) {
           db = event.target.result;
 
           func.addMember(db, id, name, position, shirt, nationality, country_birth);
-        };
+        }
         dbReq.onerror = function(event) {
           alert('error opening database ' + event.target.errorCode);
-        };
+        }
       })
-      .catch(error => console.error(error));
+      .catch(error => console.error(error))
     }
-  });
+  })
 
   if (event.target.classList.contains("saved")) {
     let db;
@@ -119,10 +119,10 @@ window.addEventListener('click', function() {
       db = event.target.result;
       
       func.getAndDisplayMember(db);
-    };
+    }
     dbReq.onerror = function(event) {
       alert('error opening database ' + event.target.errorCode);
-    };
+    }
   }
 
   idMember.forEach(id => {
@@ -139,18 +139,18 @@ window.addEventListener('click', function() {
         if (choice) {
           tx.oncomplete = function() { 
             console.log("Data with key " + id + " deleted");
-          };
+          }
         }
         tx.onerror = function(event) {
           alert('error deleting data ' + event.target.errorCode);
-        };
-      };
+        }
+      }
       dbReq.onerror = function(event) {
         alert('error opening database ' + event.target.errorCode);
-      };
+      }
     }
-  });
-});
+  })
+})
 
 /* GET TEAM PAGE & ID SQUAD */
 function teamInfo() {
@@ -177,9 +177,9 @@ function teamInfo() {
             ${func.galleryTeam()}
           `;
           root.innerHTML = data;
-        });
+        })
       }
-    });
+    })
   }
 
   fetch('https://api.football-data.org/v2/teams/65', {
@@ -191,7 +191,7 @@ function teamInfo() {
     if (response.status === 200) {
       return response.clone().json();
     } else if (response.status === 404) {
-      alert("Halaman tidak ditemukan : ", response.statusText);
+      alert("Halaman tidak ditemukan : ", response.statusText)
     } else {
       console.error("Error", response.statusText);
     }
@@ -216,9 +216,9 @@ function teamInfo() {
     let squad = result.squad;
     squad.forEach(e => {
       idMember.push(e.id);
-    });
+    })
   })
-  .catch(error => console.error(error));
+  .catch(error => console.error(error))
 }
 
 /* TESTING NOTIFICATION */
@@ -239,11 +239,11 @@ notifSubs.addEventListener('click', function() {
         'title': 'No',
       }
     ]
-  };
+  }
   if (Notification.permission === 'granted') {
     navigator.serviceWorker.ready
     .then(registration => registration.showNotification(title, options));
   } else {
     alert("You must allow notification feature");
   }
-});
+})

@@ -1,0 +1,9 @@
+import './css/materialize.min.css';
+import './css/style.css';
+import './js/components/footer.js';
+import './js/components/navbar.js';
+import './js/app.js';
+import './js/functions.js';
+import './js/main.js';
+import './js/materialize.min.js';
+import './js/nav.js';

@@ -1,0 +1,6 @@
+sender_id = 1058476248599,
+"publicKey":"BOTKxzqzCcWvoxToByL1UTtaeGI6GyV25sJbOoRX85ZqjC5rB2QT-HobT_39gEvySzCulKdDNQvWTIDcTtfOoYY",
+"privateKey":"rsMzm5Hph9oNuXt3x3y3igD-kJSIp50r6nLTFrGXb-I"
+endpoint:  https://fcm.googleapis.com/fcm/send/emj5_n6YMXQ:APA91bEdgP912at1Xe46F99jTagiE1n2xMMaC17Fc0-YlbSpM6QTjbiuc3isuzjHLwUbjDTbcBJ4aVXy8gHW5xnNjhucDqukQiR8EK9cU2bkV-VQ_SWA7UfR1mZpEVdW5gEdidd-FVVA
+p256dh key:  BE6IiDQEESdsBW+lKi2PQrz4q1YyJQc5818mYGwVihInoGLz9PPWkMzo2enWHerVrCQ81tPxJ+WPIfIVV8E1Z1w=
+auth key:  3L4F70YOgxMXXrBy/cUx4w==

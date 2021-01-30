@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Roboto+Slab&display=swap');
+
+.big-title {
+  font-family: 'Roboto Slab', serif;
+  padding: 0 12px;
+}
+
+.small-title {
+  font-family: 'Merriweather', serif;
+  margin-bottom: 30px;
+}
+
+.img-team {
+  max-height: 256px;
+}
+
+.img-member {
+  max-height: 200px;
+  padding-top: 30px;
+}
+
+.btn-offline {
+  padding-bottom: 20px;
+  margin-right: 22px;
+}
+
+.card h1 {
+  padding-top: 50px;
+  padding-bottom: 30px;
+}
+
+.since {
+  font-size: 22px;
+}
+
+.icon-margin {
+  margin-right: 20px;
+}
+
+.gallery-img {
+  border: 3px dashed #d2d2d2;
+  margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 450px) {
+  .big-title {
+    font-size: 44px;
+  }
+  .img-team {
+    max-height: 150px;
+  }
+  .img-member {
+    max-height: 150px;
+  }
+  .icon-margin {
+    margin-right: 5px;
+  }
+  .intro-team {
+    font-size: 9pt;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .intro-team {
+    font-size: 7.5pt;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .intro-team {
+    font-size: 5.5pt;
+  }
+}

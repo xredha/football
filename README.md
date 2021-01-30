@@ -1,6 +1,6 @@
-# Belajar Fundamental Front-End Web Development Dicoding
+# Membangun Progressive Web Apps Dicoding
 
-Link Belajar : [Here](https://www.dicoding.com/academies/163)  
+Link Belajar : [Here](https://www.dicoding.com/academies/74)  
 
 Untuk akses submission, silahkan pindah ke dalam branch yang diinginkan.  
 Khusus untuk submission 2 ada yang versi webpack dan standar.

@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Sniglet&display=swap');
+
+.brand-logo {
+  font-family: 'Sniglet', cursive;
+}
+
+.padding-bottom {
+  padding-bottom: 20px;
+}
+
+.justify {
+  text-align: justify;
+  text-indent: 40px;
+}
+
+.justify-no-indent {
+  text-align: justify;
+}
+
+.header-img {
+  max-height: 256px;
+  margin: 25px 0;
+}
+
+.white-line {
+  border: 3px solid white;
+  margin: 0 30%;
+}
+
+.black-line {
+  border: 3px solid black;
+  margin: 20px 30%;
+}
+
+.card-content p {
+  text-align: justify;
+}
+
+.brand-logo:hover {
+  cursor: context-menu;
+}
+
+@media screen and (max-width : 600px) {
+  .black-line {
+    margin: 20px 15%;
+  }
+}

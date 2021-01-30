@@ -1,4 +1,47 @@
-import moment from './../node_modules/moment/dist/moment.js';
+import moment from 'moment';
+
+const root = document.querySelector('#root');
+const URL = "https://api.football-data.org/v2/teams/65";
+const API_KEY = "ccf52ea7967743c5994057c9220bf23f";
+
+/* LOADING SCREEN */
+
+function loading(boolean) {
+  if (boolean) {
+    let loading = `
+      <div class="container">
+        <div class="progress white" style="margin: 75px 0">
+          <div class="indeterminate yellow"></div>
+        </div>
+      </div>
+    `;
+    root.innerHTML = loading;
+    return;
+  } else {
+    return;
+  }
+}
+
+/* TEMPLATE FETCH API */
+
+function fetchAPI(url, keyAPI, boolean) {
+  loading(boolean);
+  return fetch(url, {
+    headers : {
+      "X-Auth-Token" : keyAPI
+    }
+  })
+    .then(response => {
+      if (response.status === 200) {
+        return response.clone().json();
+      } else if (response.status === 404) {
+        alert("Halaman tidak ditemukan : ", response.statusText);
+      } else {
+        console.error("Error", response.statusText);
+      }
+    })
+    .catch(error => console.error(error));
+}
 
 /* TEAM PAGE */
 
@@ -6,7 +49,7 @@ function teamContent(result) {
   return `
     <h1 class="big-title">${result.name}</h1>
     <div class="card-image">
-      <img class="img-team" src="${result.crestUrl}">
+      <img class="img-team" src="${result.crestUrl}" alt="Logo Team">
     </div>
     <p class="blue-text text-lighten-3 since">Since ${result.founded}</p>
     <div class="card-content">
@@ -38,7 +81,7 @@ function teamContent(result) {
   `;
 }
 
-function galleryTeam() {
+function teamGallery() {
   return `
     <div class="row container">
       <div class="col s12">
@@ -92,23 +135,10 @@ function memberContent(result) {
   `;
 }
 
-function getSquadMemberTeam() {
-  return fetch('https://api.football-data.org/v2/teams/65', {
-    headers : {
-      "X-Auth-Token" : "ccf52ea7967743c5994057c9220bf23f"
-    }
-    })
-    .then(response => {
-      if (response.status === 200) {
-        return response.clone().json();
-      } else if (response.status === 404) {
-        alert("Halaman tidak ditemukan : ", response.statusText)
-      } else {
-        console.error("Error", response.statusText);
-      }
-    })
+function getMemberTeamSquad() {
+  return fetchAPI(URL, API_KEY, false)
     .then(result => result.squad)
-    .catch(error => console.error("Error : ", error))
+    .catch(error => console.error("Error : ", error));
 }
 
 /* SAVE PAGE */
@@ -154,10 +184,10 @@ function addMember(db, id, name, position, shirt, nationality, country_birth) {
   tx.oncomplete = function() { 
     alert('Data saved');
     console.log('stored data : ' + name);
-  }
+  };
   tx.onerror = function(event) {
     alert('error storing data ' + event.target.errorCode);
-  }
+  };
 }
 
 function getAndDisplayMember(db) {
@@ -176,10 +206,10 @@ function getAndDisplayMember(db) {
     } else {
       displayMember(allData);
     }
-  }
+  };
   req.onerror = function(event) {
     alert('error getting indexedDB ' + event.target.errorCode);
-  }
+  };
 }
 
 function displayMember(resultDB) {
@@ -194,7 +224,7 @@ function displayMember(resultDB) {
     }
 
     resultAll += savedContent(elems);
-  })
+  });
   
   let data = `
     <div id="member-container">
@@ -209,4 +239,4 @@ function displayMember(resultDB) {
   root.innerHTML = data;
 }
 
-export {teamContent, galleryTeam, memberContent, getSquadMemberTeam, savedContent, addMember, getAndDisplayMember, displayMember};
+export {loading, fetchAPI, teamContent, teamGallery, memberContent, getMemberTeamSquad, savedContent, addMember, getAndDisplayMember, displayMember};

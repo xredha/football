@@ -1,8 +1,19 @@
+const serviceWorker = () => new Promise((resolve, reject) => {
+    if (registerServiceWorker()) {
+      resolve(true);
+    } else {
+      reject(true);
+    }
+});
+
 if (!("serviceWorker" in navigator)) {
   console.error("ServiceWorker: Browser tidak mendukung.");
 } else {
-  registerServiceWorker();
-  requestPermission();
+  serviceWorker()
+    .then(() => {
+      requestPermission();
+    })
+    .catch(error => console.error(error));
 }
 /* REGISTER SERVICE WORKER */
 function registerServiceWorker() {
@@ -33,7 +44,7 @@ function requestPermission() {
         .then(function(registration) {
           registration.pushManager.subscribe({
             userVisibleOnly: true,
-            applicationServerKey: urlBase64ToUint8Array("BOTKxzqzCcWvoxToByL1UTtaeGI6GyV25sJbOoRX85ZqjC5rB2QT-HobT_39gEvySzCulKdDNQvWTIDcTtfOoYY")
+            applicationServerKey: urlBase64ToUint8Array("BKUmTMbjLHpsa-wBTn4uiG4gcB3_FwC9uWzeaFpL0nVcbTE8ubR0EDgKONQMd41s4Wf3pjgif8CC6R5zwecZT-8")
           })
           .then(function(subscribe) {
             console.log('Berhasil melakukan subscribe dengan endpoint: ', subscribe.endpoint);

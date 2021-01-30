@@ -1,7 +1,7 @@
 {
   "name": "Dunia Bola - Galih RS",
   "short_name": "Dunia Bola",
-  "description": "Galih Redha Saputra - Submission 2 Dicoding PWA",
+  "description": "Galih Redha Saputra - Submission 3 Dicoding PWA",
   "start_url": "/index.html",
   "display": "standalone",
   "background_color": "#98c5e9",
@@ -39,5 +39,5 @@
       "purpose": "Any maskable"
     }
   ],
-  "gcm_sender_id": "1058476248599"
+  "gcm_sender_id": "27515173138"
 }

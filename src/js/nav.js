@@ -1,10 +1,11 @@
+/* eslint-disable no-undef */
 document.addEventListener("DOMContentLoaded", function() {
   let page = window.location.hash.substr(1);
   if (page == "") page = "home";
   loadPage(page);
   
   function loadPage(page) {
-    fetch(`views/${page}.html`)
+    fetch(`/views/${page}.html`)
       .then(response => {
         if (response.status === 200) {
           return;
@@ -25,8 +26,8 @@ document.addEventListener("DOMContentLoaded", function() {
   function loadNav() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
-      if (this.readyState == 4) {
-        if (this.status != 200) return;
+      if (this.readyState === 4) {
+        if (this.status !== 200) return;
   
         // Muat daftar tautan menu
         document.querySelectorAll(".topnav, .sidenav").forEach(function(elm) {

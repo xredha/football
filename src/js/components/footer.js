@@ -15,7 +15,7 @@ class Footer extends HTMLElement {
         </div>
         <div class="footer-copyright center-align">
           <div class="container">
-            <p>Submission 2 - Dicoding © 2020 | Galih Redha Saputra | Thank's to BDD ❤️</p>
+            <p>Submission 3 - Dicoding © 2020 | Galih Redha Saputra | Thank's to BDD ❤️</p>
           </div>
         </div>
       </footer>
